@@ -1,0 +1,14 @@
+{
+  "name": "test-form-submit",
+  "version": "1.0.0",
+  "description": "Test browser suggesting to save login data",
+  "main": "index.html",
+  "scripts": {
+    "start": "node node_modules/node-http-server/server/http.js port=8000 launch=now verbose=true"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "node-http-server": "^3.0.5"
+  }
+}
