@@ -24,6 +24,9 @@ is served
 7. The same as previous, but there're 4 inputs `type="password"` w/o name and one with name set (`/index6.html` -> `/login.html`). First four have different values
 8. As previous, but unnamed passwords have `display:none` style (`/index7.html` -> `/login.html`)
 9. As `7`, but unnamed passwords have `position: absolute; left: -9999px;` style (`/index8.html` -> `/login.html`)
+10. Just like `2`, but `form` and `input` have `autocomplete="off"` set, also there's `onsubmit` event handler, 
+which replaces password field with `hidden` one and resubmits the form with 50ms delay
+11. As `10`, but password field is not removed, instead value is set to empty string
 
 ### Chrome 47, 49 (Mac)
 
@@ -37,6 +40,8 @@ have the same value (whether 3d one is empty or not)
 7. Never prompts (assuming unnamed password fields are not changed)
 8. CH47 - Never prompts (assuming unnamed password fields are not changed), CH49 (uses "Google Smart Lock") - Prompts when visible password is not empty
 9. Never prompts (assuming unnamed password fields are not changed)
+10. Never prompts
+11. Prompts when password input is non-empty
 
 ### FF 42
 
@@ -49,6 +54,9 @@ have the same value (whether 3d one is empty or not)
 7. Never prompts (assuming unnamed password fields are not changed)
 8. Never prompts (assuming unnamed password fields are not changed)
 9. Never prompts (assuming unnamed password fields are not changed)
+10. Prompts when password input is non-empty (value of renamed property is used by
+password manager)
+11. Prompts when password input is non-empty
 
 ### Safari 9
 
@@ -60,4 +68,7 @@ have the same value (whether 3d one is empty or not)
 6. Never prompts
 7. Never prompts (assuming unnamed password fields are not changed)
 8. Prompts when visible password is not empty
-8. Prompts when visible password is not empty
+9. Prompts when visible password is not empty
+10. Prompts when password input is non-empty (also it removes second input when going
+back)
+11. Prompts when password input is non-empty

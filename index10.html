@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title>test forms autocomplete</title>
+    </head>
+    <body>
+        <form action="/login.html" method="post" id="form" autocomplete="off">
+            <input type="text" name="username">
+            <input type="password" name="_password" id="password" autocomplete="off">
+            <input type="submit">
+        </form>
+        <script>
+            var form = document.querySelector('#form');
+            var processed = false;
+            form.addEventListener('submit', function(e) {
+                if (!processed) {
+                    processed = true;
+                    var pwd = document.querySelector('#password');
+                    var input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.value = pwd.value;
+                    input.name = 'trololo';
+                    pwd.value='';
+                    form.appendChild(input);
+                    e.preventDefault();
+
+                    setTimeout(function () {
+                        form.submit();
+                    }, 50);
+                }
+            });
+        </script>
+    </body>
+</html>
