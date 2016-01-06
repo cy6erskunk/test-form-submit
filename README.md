@@ -95,3 +95,12 @@ changeg, second or third added, or both second and third are added and the same
 
 Does not autofill on its own: password manager popup might be displayed after clicking
 key icon which appears in focused password field.
+
+
+### add autocomplete="off"
+
+All the pages were copied to files with `_off` suffix (e.g. `index1.html` to
+`index1_off.html`) and `autocomplete="off"` string was added to the forms and every password field.
+
+Results are completely indentical to those in previous series w/o `autofill="off"`
+
